@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chip spinner</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        font-family: ui-sans-serif, system-ui, sans-serif;
+      }
+      body {
+        max-width: 760px;
+        margin: 48px auto;
+        padding: 0 20px;
+      }
+      p {
+        color: GrayText;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 10px;
+      }
+      figure {
+        margin: 0;
+        border: 1px solid color-mix(in srgb, currentColor 15%, transparent);
+        border-radius: 20px;
+        height: 180px;
+        display: flex;
+        flex-direction: column;
+      }
+      .stage {
+        flex: 1;
+        display: grid;
+        place-items: center;
+      }
+      figcaption {
+        text-align: center;
+        font-size: 13px;
+        color: GrayText;
+        padding-bottom: 12px;
+      }
+      canvas[data-chip="gpu"] {
+        color: #4f8ff7;
+      }
+      canvas.green {
+        color: #49c98b;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Chip spinner</h1>
+    <p>
+      Spinning 3D CPU and GPU icons, drawn as a grid of dots. One canvas script,
+      no dependencies.
+    </p>
+    <div class="grid">
+      <figure>
+        <div class="stage"><canvas data-chip="cpu" role="img" aria-label="CPU"></canvas></div>
+        <figcaption>CPU</figcaption>
+      </figure>
+      <figure>
+        <div class="stage"><canvas data-chip="gpu" role="img" aria-label="GPU"></canvas></div>
+        <figcaption>GPU</figcaption>
+      </figure>
+      <figure>
+        <div class="stage"><canvas data-chip="cpu" data-dot="3" role="img" aria-label="CPU"></canvas></div>
+        <figcaption>data-dot="3"</figcaption>
+      </figure>
+      <figure>
+        <div class="stage"><canvas data-chip="gpu" data-dot="3" role="img" aria-label="GPU"></canvas></div>
+        <figcaption>data-dot="3"</figcaption>
+      </figure>
+      <figure>
+        <div class="stage"><canvas data-chip="cpu" data-dot="2" data-axis="left" role="img" aria-label="CPU"></canvas></div>
+        <figcaption>data-axis="left"</figcaption>
+      </figure>
+      <figure>
+        <div class="stage"><canvas data-chip="gpu" data-dot="2" data-duration="2500" role="img" aria-label="GPU"></canvas></div>
+        <figcaption>data-duration="2500"</figcaption>
+      </figure>
+      <figure>
+        <div class="stage"><canvas data-chip="cpu" data-dot="2" data-still role="img" aria-label="CPU"></canvas></div>
+        <figcaption>data-still</figcaption>
+      </figure>
+      <figure>
+        <div class="stage"><canvas class="green" data-chip="cpu" data-dot="2" role="img" aria-label="CPU"></canvas></div>
+        <figcaption>CSS color</figcaption>
+      </figure>
+    </div>
+    <script type="module">
+      import { mountChips } from './chip-spinner.js';
+      mountChips();
+    </script>
+  </body>
+</html>

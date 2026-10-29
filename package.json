@@ -1,0 +1,12 @@
+{
+  "name": "chip-spinner",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Spinning 3D dot-matrix CPU and GPU icons in one canvas script.",
+  "license": "MIT",
+  "type": "module",
+  "main": "chip-spinner.js",
+  "scripts": {
+    "test": "node --test"
+  }
+}
