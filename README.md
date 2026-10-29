@@ -60,7 +60,7 @@ One frame of one chip takes about half a millisecond to work out on an Apple M-s
 
 ## Browser support
 
-It needs canvas 2D and JavaScript modules, which every current browser supports. So far I have only tested it in Chromium.
+It needs canvas 2D and JavaScript modules, which every current browser supports. I have tested it in Chromium and Safari.
 
 ## License
 
